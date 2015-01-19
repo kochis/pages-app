@@ -1,17 +1,16 @@
-class Pages.Manager
+class Pages.List
   constructor: ->
-    @template = Handlebars.compile($('#page-list-template').html())
     @pages = []
-    @currentPage
+    @currentPage = null
 
-    @showPageList()
+    # Events
+    $(document).on "fb:logged-in", @setup
 
-  showPageList: =>
+  setup: =>
     FB.api "me/accounts", (response) =>
       _.each response.data, (page) =>
         @pages.push(page) if _.contains(page.perms, "ADMINISTER")
-      $('#page-select').html(@template(pages: @pages))
+      Pages.controller.show("page-select", {pages: @pages})
 
 $ ->
-  $(document).on "fb:logged-in", () ->
-    Pages.app = Pages.app || new Pages.Manager
+  Pages.list = Pages.list || new Pages.List

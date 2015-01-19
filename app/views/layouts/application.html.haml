@@ -7,12 +7,12 @@
 
   %body
     #fb-root
-    -# Views
-    = render partial: "shared/login"
-    = render partial: "shared/page_select"
+
+    #display-container.container
 
     -# Templates
-    = render partial: "templates/page_list"
+    = render partial: "templates/login"
+    = render partial: "templates/page_select"
 
     -# Javascript
     = render partial: "lib/facebook"
