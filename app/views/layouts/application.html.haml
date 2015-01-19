@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Pages
+    = stylesheet_link_tag    'application', media: 'all'
+    = csrf_meta_tags
+
+  %body
+    #fb-root
+    -# Views
+    = render partial: "shared/login"
+    = render partial: "shared/page_select"
+
+    -# Templates
+    = render partial: "templates/page_list"
+
+    -# Javascript
+    = render partial: "lib/facebook"
+    = javascript_include_tag 'application'

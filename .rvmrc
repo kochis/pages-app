@@ -1,0 +1,2 @@
+export FACEBOOK_APP_ID=752420711480278
+rvm use 2.2.0@pages-app --create

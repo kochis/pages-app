@@ -1,0 +1,16 @@
+<script id="page-list-template" type="text/x-handlebars-template">
+  <div id="page-list" class="card col-xs-12 col-sm-6 col-sm-offset-3">
+    <ul class="list">
+      {{#pages}}
+      <li class="page list-item">
+        <div class="name heading">
+          {{name}}
+        </div>
+        <div class="category subtext">
+          {{category}}
+        </div>
+      </li>
+      {{/pages}}
+    </ul>
+  </div>
+</script>
