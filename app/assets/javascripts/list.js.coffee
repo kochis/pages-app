@@ -6,5 +6,5 @@ class Pages.List
   setup: =>
     FB.api "me/accounts", (response) =>
       _.each response.data, (page) =>
-        @pages.push(page) if _.contains(page.perms, "ADMINISTER")
+        @pages.push(new Pages.Page(page)) if _.contains(page.perms, "ADMINISTER")
       Pages.controller.show("page-select", {pages: @pages})
