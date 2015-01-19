@@ -7,6 +7,10 @@ class Pages.Controller
       "page-select": Handlebars.compile($('#page-select-template').html())
     }
 
+    # Events
+    $(document).on "fb:loaded", Pages.login.setup
+    $(document).on "fb:logged-in", Pages.list.setup
+
   show: (template, context) =>
     @container.html(@templates[template](context))
     @currentPage = template

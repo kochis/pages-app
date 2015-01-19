@@ -16,4 +16,5 @@
 //= require handlebars
 //= require bootstrap-sprockets
 //= require namespace
+//= require init
 //= require_tree .

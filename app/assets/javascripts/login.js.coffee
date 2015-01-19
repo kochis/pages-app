@@ -1,11 +1,14 @@
 class Pages.Login
   constructor: ->
+    # do nothing
+
+  setup: =>
     FB.getLoginStatus (response) =>
       if response.status == "connected"
         @loggedIn()
       else
-        Pages.controller.show("login")
         $(".fb-button").on "click", @login
+        Pages.controller.show("login")
 
   login: =>
     FB.login((response) =>
@@ -15,7 +18,3 @@ class Pages.Login
 
   loggedIn: ->
     $(document).trigger("fb:logged-in")
-
-$ ->
-  $(document).on "fb:loaded", () ->
-    new Pages.Login
