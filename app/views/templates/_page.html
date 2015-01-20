@@ -34,19 +34,21 @@
       </table>
     </div>
 
-    <div id="new-post" class="card col-xs-12 col-sm-6 col-sm-offset-3">
+    <div id="new-post" class="card col-xs-12 col-sm-6 col-sm-offset-3" style="display:none">
       <div id="new-post-wrapper">
         <form id="new-post-form">
-          <textarea class="form-control" placeholder="What have you been up to?" rows="5"></textarea>
+          <textarea name="message" class="form-control" placeholder="What have you been up to?" rows="5"></textarea>
+          <div id="submit-area">
+            <span class="error-message">
+            </span>
+            Schedule:
+            <input type="text" placeholder="Now" id="schedule-post-date" name="scheduled_date" />
+            <input type="text" placeholder="mm:ss" id="schedule-post-time" name="scheduled_time" style="display: none"/>
+            <button id="submit-post" class="btn btn-primary btn-xs">
+              Post
+            </button>
+          </div>
         </form>
-        <div id="submit-area">
-          Schedule:
-          <input type="text" placeholder="Now" id="schedule-post-date"/>
-          <input type="text" id="schedule-post-time" style="display: none"/>
-          <button id="submit-post" class="btn btn-primary btn-xs">
-            Post
-          </button>
-        </div>
       </div>
     </div>
 

@@ -6,4 +6,7 @@ $ ->
       amPm = "pm"
       if hours > 12
         hours = hours - 12
-    "#{hours}:#{date.getMinutes()}#{amPm}"
+    minutes = date.getMinutes()
+    if minutes < 10
+      minutes = "0" + minutes
+    "#{hours}:#{minutes} #{amPm}"

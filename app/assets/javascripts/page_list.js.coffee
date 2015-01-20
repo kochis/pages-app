@@ -21,3 +21,4 @@ class Pages.PageList
     @currentPage = _.find @pages, (page) ->
       page.id == id
     @currentPage.setup()
+    @currentPage
