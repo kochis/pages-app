@@ -1,4 +1,4 @@
 $ ->
   Pages.login      ||= new Pages.Login
-  Pages.list       ||= new Pages.List
+  Pages.pageList   ||= new Pages.PageList
   Pages.controller ||= new Pages.Controller

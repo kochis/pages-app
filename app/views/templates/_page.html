@@ -1,0 +1,30 @@
+<script id="page-template" type="text/x-handlebars-template">
+  <div id="page-container" class="container">
+    <div id="page-info" class="card col-xs-12 col-sm-6 col-sm-offset-3">
+      <h3 class="name">
+        {{name}}
+      </h3>
+      <div class="link">
+        <a href="{{link}}">
+          <span class="glyphicon glyphicon-link"></span>
+          {{link}}
+        </a>
+      </div>
+    </div>
+    <div id="posts" class="card col-xs-12 col-sm-6 col-sm-offset-3">
+      <ul class="list">
+        {{#posts}}
+        <li class="post list-item" data-id="{{id}}">
+          <div class="message heading">
+            {{message}}
+            <span class="glyphicon glyphicon-ok-sign {{published}}" data-toggle="tooltip" title="{{published}}"></span>
+          </div>
+          <div class="publish-date">
+            {{publishDate}}
+          </div>
+        </li>
+        {{/posts}}
+      </ul>
+    </div>
+  </div>
+</script>
