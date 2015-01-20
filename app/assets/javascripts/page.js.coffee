@@ -6,16 +6,14 @@ class Pages.Page
     @accessToken = page.access_token
     @link        = null
     @posts       = []
+    @additionalInfo()
+
+  additionalInfo: =>
+    FB.api "/#{@id}", (page) =>
+      @link = page.link
 
   setup: =>
     @posts = []
-
-    # Get additional page info
-    FB.api "/#{@id}", (page) =>
-      @link = page.link
-      Pages.controller.show("page", @)
-
-    # Get posts
     FB.api "/#{@id}/promotable_posts", (response) =>
       _.each response.data, (post) =>
         @posts.push(new Pages.Post(post))
