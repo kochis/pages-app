@@ -36,8 +36,14 @@ class Pages.Page
       $("#post-link-#{$(this).data("id")}").click()
 
     _.each @posts, (post) =>
-      FB.api "/#{@id}_#{post.id}/insights/page_views", (response) ->
-        $(".post[data-id=#{post.id}] .views .badge").html("#{response.data.length} views")
+      FB.api "/#{post.id}/insights/post_impressions/lifetime", (response) =>
+        $(".post[data-id=#{post.id}] .views .badge").html(@viewsText(response.data[0].values[0].value))
+
+  viewsText: (views) ->
+    if views == 1
+      "#{views} view"
+    else
+      "#{views} views"
 
   reload: =>
     @posts = []

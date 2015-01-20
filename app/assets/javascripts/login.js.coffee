@@ -14,7 +14,7 @@ class Pages.Login
     FB.login((response) =>
       if response.status == "connected"
         @loggedIn()
-    ,{scope: 'public_profile,email,manage_pages,read_page_mailboxes,publish_actions'})
+    ,{scope: 'public_profile,email,manage_pages,read_page_mailboxes,publish_actions,read_insights'})
 
   loggedIn: ->
     $(document).trigger("fb:logged-in")
