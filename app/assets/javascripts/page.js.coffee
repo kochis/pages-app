@@ -49,6 +49,7 @@ class Pages.Page
 
   reload: =>
     @posts = []
+    console.log("reload")
     FB.api "/#{@id}/promotable_posts", (response) =>
       _.each response.data, (post) =>
         @posts.push(new Pages.Post(post))

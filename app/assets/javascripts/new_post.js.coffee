@@ -23,7 +23,6 @@ class Pages.NewPost
     @scheduledDate = null
     @scheduledTime = null
     @form.find("[name=message]").val("")
-    @form.on "submit", null
 
   handleSubmit: (event) =>
     event.preventDefault()
@@ -35,6 +34,7 @@ class Pages.NewPost
         if (response.error)
           @form.find('.error-message').html(response.error.message)
         else
+          @form.off()
           @close()
           $(document).trigger("fb:new-post")
     )
