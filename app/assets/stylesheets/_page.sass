@@ -15,13 +15,14 @@
         color: #9197A3
         text-decoration: none
         &:hover
-          text-decoration: none
+          text-decoration: underline
           color: #9197A3
 
 #posts
   padding: 0
 
   .post
+    position: relative
     .glyphicon-ok-sign
       margin-left: 4px
       font-size: 14px
@@ -32,3 +33,11 @@
       font-size: 11px
       font-style: italic
       color: #9197A3
+    .views
+      position: absolute
+      right: 10px
+      top: 20px
+      font-size: 12px
+      .badge
+        background-color: #739CF2
+        font-weight: normal

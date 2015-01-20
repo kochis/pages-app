@@ -23,4 +23,10 @@ class Pages.Page
       _.each response.data, (post) =>
         @posts.push(new Pages.Post(post))
       Pages.controller.show("page", @)
+      @updateViews()
+
+  updateViews: =>
+    _.each @posts, (post) =>
+      FB.api "/#{@id}_#{post.id}/insights/page_views", (response) ->
+        $(".post[data-id=#{post.id}] .views .badge").html("#{response.data.length} views")
 
