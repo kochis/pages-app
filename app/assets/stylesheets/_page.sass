@@ -1,0 +1,95 @@
+#page-container
+  margin-top: 50px
+
+  #page-info
+    margin-bottom: 30px
+    &.card
+      padding: 15px
+      background: #F6F7F8
+    h3
+      margin-top: 5px
+      margin-bottom: 5px
+    .link
+      a
+        font-size: 12px
+        color: #9197A3
+        text-decoration: none
+        &:hover
+          text-decoration: underline
+          color: #9197A3
+
+#posts
+  padding: 0
+
+  .post
+    position: relative
+    .post-link
+      color: inherit
+      text-decoration: inherit
+    .glyphicon-ok-sign
+      margin-left: 4px
+      font-size: 14px
+      color: #9197A3
+      &.published
+        color: #00C000
+    .publish-date
+      font-size: 11px
+      font-style: italic
+      color: #9197A3
+    .views
+      position: absolute
+      right: 10px
+      top: 20px
+      font-size: 12px
+      .badge
+        background-color: #739CF2
+        font-weight: normal
+
+#post-actions
+  background: #f6f7f8
+  margin-bottom: 5px
+
+  .table
+    margin-bottom: 0
+    td
+      border: none
+
+    .reload-cell
+      text-align: right
+
+  .post-button
+    font-size: 12px
+    font-weight: bold
+    color: #3b5998
+    &:hover
+      text-decoration: underline
+      cursor: pointer
+
+#new-post
+  padding: 0
+  margin-bottom: 5px
+
+  #new-post-form
+    textarea
+      border: none
+      box-shadow: none
+
+  #submit-area
+    text-align: right
+    padding: 15px
+    background: #f6f7f8
+    border-top: 1px solid #e9eaed
+    position: relative
+
+    .error-message
+      margin-right: 5px
+      color: red
+      font-size: 12px
+
+    #schedule-post-date, #schedule-post-time
+      width: 80px
+
+    .btn-primary
+      border-radius: 0
+      padding: 4px 8px
+      background-color: #4e69a2

@@ -15,5 +15,9 @@
 //= require underscore
 //= require handlebars
 //= require bootstrap-sprockets
+//= require picker
+//= require picker.date
+//= require picker.time
 //= require namespace
+//= require init
 //= require_tree .
