@@ -4,6 +4,8 @@ class Pages.PageList
     @currentPage = null
 
   setup: =>
+    @pages = []
+
     FB.api "me/accounts", (response) =>
 
       # Parse fb response
@@ -14,7 +16,6 @@ class Pages.PageList
       Pages.controller.show "page-select", {pages: @pages}, ->
         $("#page-list .page").on "click", ->
           $(document).trigger("pages:page-selected", "#{$(this).data("id")}")
-
 
   # Page chosen from select page screen
   selected: (id) =>

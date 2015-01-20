@@ -24,6 +24,8 @@ class Pages.Page
       # Render on page and setup events
       Pages.controller.show "page", @, =>
         @updatePosts()
+        $("#back-link").on "click", ->
+          $(document).trigger("fb:logged-in")
         $("#new-post-button").on "click", =>
           Pages.newPost = new Pages.NewPost(@)
         $("#reload-button").on "click", =>

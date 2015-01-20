@@ -12,7 +12,6 @@ class Pages.Controller
     Handlebars.registerPartial("posts", $("#posts-partial").html())
 
     # Routes
-    $(document).on "fb:loaded", Pages.login.setup
     $(document).on "fb:logged-in", Pages.pageList.setup
     $(document).on "pages:page-selected", (event, id) =>
       @currentPage = Pages.pageList.selected(id)

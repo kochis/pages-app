@@ -5,10 +5,7 @@
       xfbml      : true,
       version    : 'v2.1'
     });
-    // Pages.Login.init()
-    var event = document.createEvent("HTMLEvents");
-    event.initEvent("fb:loaded", true, true);
-    document.dispatchEvent(event);
+    Pages.login.setup();
   };
 
   (function(d, s, id){
