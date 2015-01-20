@@ -35,6 +35,7 @@ class Pages.NewPost
         if (response.error)
           @form.find('.error-message').html(response.error.message)
         else
+          @close()
           $(document).trigger("fb:new-post")
     )
 

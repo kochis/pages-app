@@ -29,7 +29,6 @@ class Pages.Page
         $("#reload-button").on "click", =>
           @reload()
         $(document).on "fb:new-post", =>
-          Pages.newPost.close()
           @reload()
 
   updatePosts: =>
