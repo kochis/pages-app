@@ -1,5 +1,6 @@
 <script id="page-template" type="text/x-handlebars-template">
   <div id="page-container" class="container">
+
     <div id="page-info" class="card col-xs-12 col-sm-6 col-sm-offset-3">
       <h3 class="name">
         {{name}}
@@ -11,6 +12,28 @@
         </a>
       </div>
     </div>
+
+    <div id="post-actions" class="card col-xs-12 col-sm-6 col-sm-offset-3">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="new-post-cell">
+              <span id="new-post-button" class="post-button">
+                <span class="glyphicon glyphicon-plus"></span>
+                New Post
+              </span>
+            </td>
+            <td class="reload-cell">
+              <span id="reload-button" class="post-button">
+                <span class="glyphicon glyphicon-refresh"></span>
+                Reload
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div id="posts" class="card col-xs-12 col-sm-6 col-sm-offset-3">
       <ul class="list">
         {{#posts}}
