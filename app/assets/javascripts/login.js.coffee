@@ -7,8 +7,8 @@ class Pages.Login
       if response.status == "connected"
         @loggedIn()
       else
-        Pages.controller.show("login")
-        $(".fb-button").on "click", @login
+        Pages.controller.show "login", null, =>
+          $(".fb-button").on "click", @login
 
   login: =>
     FB.login((response) =>

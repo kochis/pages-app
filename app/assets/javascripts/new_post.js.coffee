@@ -1,16 +1,25 @@
 class Pages.NewPost
   constructor: (page) ->
     @page = page
-    @container = $("#new-post").show()
+    @container = $("#new-post")
     @form = $("#new-post-form")
     @scheduledDate = null
     @scheduledTime = null
+    @open()
     @setupDatePicker()
 
     @form.on "submit", @handleSubmit
 
+  open: =>
+    $("#new-post-button").hide()
+    $("#cancel-post-button").show().on "click", =>
+      @close()
+    @container.slideDown()
+
   close: =>
-    @container.hide()
+    $("#cancel-post-button").hide()
+    $("#new-post-button").show()
+    @container.slideUp()
     @scheduledDate = null
     @scheduledTime = null
     @form.find("[name=message]").val("")

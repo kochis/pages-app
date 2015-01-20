@@ -3,6 +3,7 @@ class Pages.Post
     @id = post.id
     @created = new Date(post.created_time)
     @message = post.message
+    @link = post.actions[0].link
     @isPublished = post.is_published
 
   published: =>
@@ -12,3 +13,6 @@ class Pages.Post
     dateString = "Publish"
     dateString += "ed" if @isPublished
     dateString + " on #{@created.toDateString()} at #{localTime(@created)}"
+
+  displayMessage: =>
+    if @message.length >= 30 then @message.substring(0, 25) + "..." else @message

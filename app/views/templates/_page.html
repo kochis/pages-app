@@ -20,7 +20,15 @@
             <td class="new-post-cell">
               <span id="new-post-button" class="post-button">
                 <span class="glyphicon glyphicon-plus"></span>
-                New Post
+                <span class="text">
+                  New Post
+                </span>
+              </span>
+              <span id="cancel-post-button" class="post-button" style="display: none">
+                <span class="glyphicon glyphicon-remove"></span>
+                <span class="text">
+                  Cancel
+                </span>
               </span>
             </td>
             <td class="reload-cell">
@@ -52,24 +60,8 @@
       </div>
     </div>
 
-
     <div id="posts" class="card col-xs-12 col-sm-6 col-sm-offset-3">
-      <ul class="list">
-        {{#posts}}
-        <li class="post list-item" data-id="{{id}}">
-          <div class="message heading">
-            {{message}}
-            <span class="glyphicon glyphicon-ok-sign {{published}}" data-toggle="tooltip" title="{{published}}"></span>
-          </div>
-          <div class="publish-date">
-            {{publishDate}}
-          </div>
-          <div class="views">
-            <span class="badge">Views ...</span>
-          </div>
-        </li>
-        {{/posts}}
-      </ul>
+      {{> posts}}
     </div>
   </div>
 </script>

@@ -11,12 +11,12 @@ class Pages.PageList
         @pages.push(new Pages.Page(page)) if _.contains(page.perms, "ADMINISTER")
 
       # Render on page
-      Pages.controller.show("page-select", {pages: @pages})
+      Pages.controller.show "page-select", {pages: @pages}, ->
+        $("#page-list .page").on "click", ->
+          $(document).trigger("pages:page-selected", "#{$(this).data("id")}")
 
-      # Setup event handler
-      $("#page-list .page").on "click", ->
-        $(document).trigger("pages:page-selected", "#{$(this).data("id")}")
 
+  # Page chosen from select page screen
   selected: (id) =>
     @currentPage = _.find @pages, (page) ->
       page.id == id
