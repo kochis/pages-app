@@ -56,9 +56,13 @@
           <div id="submit-area">
             <span class="error-message">
             </span>
-            Schedule:
-            <input type="text" placeholder="Now" id="schedule-post-date" name="scheduled_date" />
-            <input type="text" placeholder="mm:ss" id="schedule-post-time" name="scheduled_time" style="display: none"/>
+            Publish:
+            <input type="checkbox" name="published" />
+            <div id="schedule-wrapper" style="display:none;">
+              Schedule:
+              <input type="text" placeholder="Now" id="schedule-post-date" name="scheduled_date" />
+              <input type="text" placeholder="mm:ss" id="schedule-post-time" name="scheduled_time" style="display: none"/>
+            </div>
             <button id="submit-post" class="btn btn-primary btn-xs">
               Post
             </button>

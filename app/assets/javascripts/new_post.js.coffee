@@ -10,6 +10,13 @@ class Pages.NewPost
 
     @form.on "submit", @handleSubmit
 
+    @form.find("[name=published]").on "change", (event) =>
+      if event.target.checked
+        $("#schedule-wrapper").show()
+      else
+        $("#schedule-wrapper").hide()
+
+
   open: =>
     $("#new-post-button").hide()
     $("#cancel-post-button").show().on "click", =>
@@ -26,6 +33,7 @@ class Pages.NewPost
 
   handleSubmit: (event) =>
     event.preventDefault()
+    console.log(@data())
     FB.api(
       "#{@page.id}/feed",
       "post",
@@ -42,13 +50,14 @@ class Pages.NewPost
   data: =>
     params = {
       message: @form.find("[name=message]").val(),
-      access_token: @page.accessToken
+      access_token: @page.accessToken,
+      published: @form.find("[name=published]")[0].checked
     }
 
-    if @scheduledDate
+
+    if params.published && @scheduledDate
       params = _.extend(params, {
-        scheduled_publish_time: (new Date(@scheduledDate + (@scheduledTime * 1000 * 60)).getTime() / 1000),
-        published: false
+        scheduled_publish_time: (new Date(@scheduledDate + (@scheduledTime * 1000 * 60)).getTime() / 1000)
       })
 
     params
